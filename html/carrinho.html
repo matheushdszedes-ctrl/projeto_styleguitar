@@ -1,0 +1,112 @@
+CARRINHO
+ 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho de Compras</title>
+
+lopu    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+ 
+    <header class="navbar">
+        <div class="logo">
+            <a href="#">
+                <img src="../img/Gemini_Generated_Image_kw99mhkw99mhkw99-removebg-preview.png" alt="Lions Guitarrs" class="logo-img">
+            </a>
+        </div>
+ 
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/NossasCustomizacoes.html">Customizações</a></li>
+                <li><a href="../html/loja.html">Produtos</a></li>
+                <li><a href="../html/texte.html">Custom</a></li>
+                <li><a href="../html/cadastro.html">Cadastro</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+                <li><a href="../html/carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <div class="carrinho-container">
+       
+        <div class="carrinho-produtos">
+            <h2>Carrinho de Compras</h2>
+           
+            <div class="produto-item">
+                <div class="img-wrapper">
+                    <img src="../img/les-paul-custom.png" alt="Les Paul Custom">
+                </div>
+                <div class="produto-info">
+                    <h3>Les Paul Custom</h3>
+                    <p class="categoria">Customizados</p>
+                    <button class="btn-remover"><i class="fa-solid fa-trash"></i> Remover</button>
+                </div>
+                <div class="produto-quantidade">
+                    <button class="qtd-btn">-</button>
+                    <span class="qtd-numero">1</span>
+                    <button class="qtd-btn">+</button>
+                </div>
+                <div class="produto-preco">
+                    R$ 30.000
+                </div>
+            </div>
+ 
+            <div class="produto-item">
+                <div class="img-wrapper">
+                    <img src="../img/WarlockGuitar.png" alt="Warlock">
+                </div>
+                <div class="produto-info">
+                    <h3>Warlock</h3>
+                    <p class="categoria">Loja</p>
+                    <button class="btn-remover"><i class="fa-solid fa-trash"></i> Remover</button>
+                </div>
+                <div class="produto-quantidade">
+                    <button class="qtd-btn">-</button>
+                    <span class="qtd-numero">1</span>
+                    <button class="qtd-btn">+</button>
+                </div>
+                <div class="produto-preco">
+                    R$ 15.000
+                </div>
+            </div>
+        </div>
+ 
+        <div class="carrinho-resumo">
+            <h2>Resumo do Pedido</h2>
+           
+            <div class="resumo-linha">
+                <span>Subtotal (2 itens)</span>
+                <span>R$ 45.000</span>
+            </div>
+           
+            <div class="resumo-linha">
+                <span>Frete</span>
+                <span class="frete-gratis">Grátis</span>
+            </div>
+ 
+            <div class="cupom-secao">
+                <input type="text" placeholder="Cupom de desconto">
+                <button class="btn-aplicar">Aplicar</button>
+            </div>
+ 
+            <hr>
+ 
+            <div class="resumo-linha total">
+                <span>Total</span>
+                <span>R$ 45.000</span>
+            </div>
+ 
+            <button class="btn-finalizar">Finalizar Compra</button>
+            <a href="#" class="continuar-comprando">Continuar Comprando</a>
+        </div>
+ 
+    </div>
+ 
+</body>
+</html>
+ 
