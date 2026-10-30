@@ -1,0 +1,122 @@
+/* ==========================================================
+   CUSTOM (texte.html) – css/custom.css
+   Monte a sua guitarra: pré-visualização + opções + resumo.
+   Estrutura esperada no html:
+   .custom-layout
+     .preview (.preview-img > img, .preview-nome, .preview-cor)
+     .opcoes
+        .opcao-grupo (h3 + .opcoes-lista)
+           .opcao-btn (.ativo)            -> botões de texto (modelo, madeira...)
+           .cor-btn (.ativo, style="--cor:#xxxxxx") -> bolinhas de cor
+     .resumo-custom (.resumo-linha, .total, .btn)
+   ========================================================== */
+
+.custom-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ===== PRÉ-VISUALIZAÇÃO ===== */
+.preview {
+    position: sticky; top: 76px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.preview-img {
+    height: 420px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f6dcd8, #f0c9c4);
+    display: grid; place-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.preview-img img { max-height: 90%; max-width: 80%; object-fit: contain; transition: transform .35s, filter .35s; }
+.preview-img:hover img { transform: rotate(-4deg) scale(1.04); }
+
+/* aplica a cor escolhida como brilho colorido atrás da guitarra */
+.preview-img::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 55%, var(--cor-escolhida, transparent) 0%, transparent 62%);
+    opacity: .35; transition: background .3s;
+}
+
+.preview-nome { font-family: var(--font-title); font-size: 26px; margin: 16px 0 2px; }
+.preview-cor { font-size: 12px; color: var(--muted); }
+
+/* ===== OPÇÕES ===== */
+.opcoes {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+.opcoes > h2 { font-size: 28px; margin-bottom: 4px; }
+.opcoes > p { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+
+.opcao-grupo { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.opcao-grupo:last-of-type { border-bottom: none; }
+.opcao-grupo h3 { font-size: 16px; margin-bottom: 10px; }
+.opcoes-lista { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.opcao-btn {
+    background: #fff; color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 12px; font-weight: 500;
+    transition: all .2s;
+}
+.opcao-btn small { margin-left: 6px; color: var(--muted); font-size: 10px; }
+.opcao-btn:hover { border-color: var(--red); }
+.opcao-btn.ativo { background: var(--red); border-color: var(--red); color: #fff; }
+.opcao-btn.ativo small { color: rgba(255, 255, 255, .8); }
+
+.cor-btn {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: var(--cor, #999);
+    box-shadow: 0 0 0 1px var(--line);
+    transition: transform .2s, box-shadow .2s;
+}
+.cor-btn:hover { transform: scale(1.12); }
+.cor-btn.ativo { box-shadow: 0 0 0 2px var(--red); transform: scale(1.12); }
+
+/* ===== RESUMO ===== */
+.resumo-custom {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+}
+.resumo-custom .resumo-linha {
+    display: flex; justify-content: space-between;
+    font-size: 12px; margin-bottom: 8px; color: var(--muted);
+}
+.resumo-custom .resumo-linha strong { color: var(--ink); font-weight: 600; }
+.resumo-custom hr { border: none; border-top: 1px solid var(--line); margin: 12px 0; }
+
+.resumo-custom .total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 14px; font-size: 13px; font-weight: 600;
+}
+.resumo-custom .total span:last-child { font-family: var(--font-title); font-size: 28px; font-weight: 400; }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+    .custom-layout { grid-template-columns: 1fr; }
+    .preview { position: static; }
+    .preview-img { height: 320px; }
+}
+@media (max-width: 560px) {
+    .opcoes, .preview { padding: 16px; }
+    .preview-img { height: 260px; }
+}

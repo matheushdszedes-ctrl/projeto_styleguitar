@@ -1,0 +1,94 @@
+/* ==========================================================
+   CUSTOMIZAÇÕES (NossasCustomizacoes.html) – css/customizacoes.css
+   Galeria das guitarras customizadas já feitas.
+   Estrutura esperada no html:
+   .cabecalho-pagina (.eyebrow, h1, p)
+   .filtros-chips > button.chip (.ativo)
+   .galeria > .item-custom (.img-wrapper img, .item-custom-info h3/p, .tags > span, .rodape)
+   ========================================================== */
+
+.cabecalho-pagina { text-align: center; max-width: 620px; margin: 24px auto 32px; }
+.cabecalho-pagina h1 { font-size: 46px; line-height: 1.05; margin: 10px 0 12px; }
+.cabecalho-pagina p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ===== CHIPS DE FILTRO ===== */
+.filtros-chips { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+
+.chip {
+    background: #fff; color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 12px; font-weight: 500;
+    transition: all .2s;
+}
+.chip:hover { border-color: var(--red); color: var(--red); }
+.chip.ativo { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* ===== GALERIA ===== */
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.item-custom {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+    animation: entrar .4s ease both;
+}
+.item-custom:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(181, 18, 27, .18); }
+
+.item-custom .img-wrapper {
+    height: 230px;
+    background: linear-gradient(180deg, #f6dcd8, #f0c9c4);
+    display: grid; place-items: center;
+    overflow: hidden;
+}
+.item-custom .img-wrapper img {
+    max-width: 78%; max-height: 90%; object-fit: contain;
+    transition: transform .35s;
+}
+.item-custom:hover .img-wrapper img { transform: scale(1.07) rotate(-3deg); }
+
+.item-custom-info { padding: 16px 18px 18px; }
+.item-custom-info h3 { font-size: 21px; margin-bottom: 4px; }
+.item-custom-info p { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tags span {
+    font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .4px;
+    color: var(--red);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 999px; padding: 3px 9px;
+}
+
+.item-custom .rodape { display: flex; justify-content: space-between; align-items: center; }
+.item-custom .preco { font-size: 16px; font-weight: 700; }
+
+/* ===== CHAMADA PARA CRIAR A SUA ===== */
+.cta-custom {
+    margin-top: 48px;
+    background: var(--red); color: #fff;
+    border-radius: 22px;
+    padding: 40px 28px;
+    text-align: center;
+}
+.cta-custom h2 { font-size: 32px; margin-bottom: 8px; }
+.cta-custom p { font-size: 13px; opacity: .9; margin-bottom: 20px; }
+.cta-custom .btn { background: #fff; color: var(--red); padding: 12px 26px; }
+
+/* ===== SEM RESULTADOS ===== */
+.galeria-vazia {
+    grid-column: 1 / -1; text-align: center;
+    padding: 48px 20px; color: var(--muted); font-size: 13px;
+    border: 1px dashed var(--line); border-radius: var(--radius); background: #fff;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+    .galeria { grid-template-columns: 1fr; }
+    .cabecalho-pagina h1 { font-size: 36px; }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guitar – Custom</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../img/Gemini_Generated_Image_kw99mhkw99mhkw99-removebg-preview.png" alt="Lions Guitarrs" class="logo-img">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="NossasCustomizacoes.html">Customizações</a></li>
+                <li><a href="loja.html">Produtos</a></li>
+                <li><a href="texte.html" class="active">Custom</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrinho.html">Carrinho <span id="cart-badge" class="cart-badge">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <div class="custom-layout">
+
+            <!-- PRÉ-VISUALIZAÇÃO -->
+            <section class="preview" aria-label="Pré-visualização">
+                <div class="preview-img" style="--cor-escolhida:#7d0d14">
+                    <img src="../img/WarlockGuitar.png" alt="Guitarra em montagem">
+                </div>
+                <h2 class="preview-nome">Warlock</h2>
+                <p class="preview-cor">Vermelho carmim · Alder · Brilhante</p>
+            </section>
+
+            <!-- OPÇÕES -->
+            <section class="opcoes">
+                <span class="eyebrow">Monte a sua</span>
+                <h2>Customizar guitarra</h2>
+                <p>Escolha cada detalhe e veja o valor atualizar.</p>
+
+                <div class="opcao-grupo">
+                    <h3>Modelo</h3>
+                    <div class="opcoes-lista">
+                        <button type="button" class="opcao-btn ativo">Warlock <small>+ R$ 15.000</small></button>
+                        <button type="button" class="opcao-btn">Les Paul <small>+ R$ 22.000</small></button>
+                        <button type="button" class="opcao-btn">Flying V <small>+ R$ 18.500</small></button>
+                    </div>
+                </div>
+
+                <div class="opcao-grupo">
+                    <h3>Madeira do corpo</h3>
+                    <div class="opcoes-lista">
+                        <button type="button" class="opcao-btn ativo">Alder <small>+ R$ 0</small></button>
+                        <button type="button" class="opcao-btn">Mogno <small>+ R$ 1.200</small></button>
+                        <button type="button" class="opcao-btn">Ash <small>+ R$ 900</small></button>
+                    </div>
+                </div>
+
+                <div class="opcao-grupo">
+                    <h3>Cor</h3>
+                    <div class="opcoes-lista">
+                        <button type="button" class="cor-btn ativo" style="--cor:#b5121b" title="Vermelho carmim" aria-label="Vermelho carmim"></button>
+                        <button type="button" class="cor-btn" style="--cor:#1b1b1b" title="Preto obsidiana" aria-label="Preto obsidiana"></button>
+                        <button type="button" class="cor-btn" style="--cor:#d9822b" title="Sunburst" aria-label="Sunburst"></button>
+                        <button type="button" class="cor-btn" style="--cor:#1f3b73" title="Azul noite" aria-label="Azul noite"></button>
+                        <button type="button" class="cor-btn" style="--cor:#f2eee6" title="Branco pérola" aria-label="Branco pérola"></button>
+                    </div>
+                </div>
+
+                <div class="opcao-grupo">
+                    <h3>Acabamento</h3>
+                    <div class="opcoes-lista">
+                        <button type="button" class="opcao-btn ativo">Brilhante <small>+ R$ 0</small></button>
+                        <button type="button" class="opcao-btn">Fosco <small>+ R$ 600</small></button>
+                        <button type="button" class="opcao-btn">Vintage <small>+ R$ 1.500</small></button>
+                    </div>
+                </div>
+
+                <div class="resumo-custom">
+                    <div class="resumo-linha"><span>Modelo</span><strong>Warlock</strong></div>
+                    <div class="resumo-linha"><span>Madeira</span><strong>Alder</strong></div>
+                    <div class="resumo-linha"><span>Cor</span><strong>Vermelho carmim</strong></div>
+                    <div class="resumo-linha"><span>Acabamento</span><strong>Brilhante</strong></div>
+                    <hr>
+                    <div class="total"><span>Total</span><span>R$ 15.000</span></div>
+                    <button type="button" class="btn btn-grande">Adicionar ao carrinho</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="../js/comum.js"></script>
+    <script src="../js/custom.js"></script>
+</body>
+</html>
